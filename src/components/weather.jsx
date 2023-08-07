@@ -16,12 +16,12 @@ const Weather = () => {
 
     // autocomplete search
     const searchResult = (value) => {
-        axios.get(`http://api.weatherapi.com/v1/search.json?key=${API_KEY}&q=${value}`).then(response => setAutoComplete(response.data));
+        axios.get(`https://api.weatherapi.com/v1/search.json?key=${API_KEY}&q=${value}`).then(response => setAutoComplete(response.data));
     }
 
     // get weather info of the location
     const searchLocation = (event,value) => {
-        axios.get(`http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${value}&days=3&aqi=no&alerts=no`)
+        axios.get(`https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${value}&days=3&aqi=no&alerts=no`)
         .then(response => response.data).then(data => {
             setCity(data.location);
             setCurrentData(data.current);
